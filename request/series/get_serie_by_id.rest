@@ -1,0 +1,1 @@
+GET http://localhost:3002/api/series/606e05e102f0150da0377a8a

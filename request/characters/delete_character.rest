@@ -1,0 +1,2 @@
+DELETE  http://localhost:3002/api/characters/606e18e34ebc67108e7711ef
+Content-Type: application/json

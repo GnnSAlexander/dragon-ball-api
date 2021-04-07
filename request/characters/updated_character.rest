@@ -1,0 +1,10 @@
+PUT http://localhost:3002/api/characters/606e16ba76640d104ba047f4
+Content-Type: application/json
+
+{
+  "name": "Piccolo",
+  "img": "https://static.wikia.nocookie.net/dragonball/images/e/e2/Earth_DBZ_Ep_26_001.png/revision/latest/scale-to-width-down/323?cb=20170910171630",
+  "planet": "Namen",
+  "species": "Alien",
+  "series": "606e14072256410fc986dd90,606e14252256410fc986dd91"
+}

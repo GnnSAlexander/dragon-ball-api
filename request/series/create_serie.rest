@@ -1,0 +1,7 @@
+PUT http://localhost:3002/api/series/606e14ec54ff26101378bf9e
+Content-Type: application/json
+
+{
+  "name": "Dragon Ball GT asas",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Dragon_Ball_Z_Logo.png"
+}

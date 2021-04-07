@@ -1,0 +1,10 @@
+POST http://localhost:3002/api/characters/
+Content-Type: application/json
+
+{
+  "name": "Piccolo",
+  "img": "https://static.wikia.nocookie.net/dragonball/images/e/e2/Earth_DBZ_Ep_26_001.png/revision/latest/scale-to-width-down/323?cb=20170910171630",
+  "planet": "Earth",
+  "species": "Saiya",
+  "series": "606e14072256410fc986dd90,606e14252256410fc986dd91"
+}
