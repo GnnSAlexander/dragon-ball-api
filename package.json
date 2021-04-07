@@ -1,5 +1,5 @@
 {
-  "name": "api-dragon-ball",
+  "name": "dragon-ball-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,8 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Dragon Ball", "Dragon Ball api"],
+  "author": "GnnSAlexander",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.7"
