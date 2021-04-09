@@ -1,0 +1,1 @@
+DELETE http://localhost:3002/api/planets/606fc9930bff5b1331e43a50

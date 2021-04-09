@@ -1,0 +1,7 @@
+POST http://localhost:3002/api/planets
+Content-Type: application/json
+
+{
+  "name": "Namek",
+  "img": "https://static.wikia.nocookie.net/dragonball/images/4/43/NamekGreenPlanet.png"
+}
