@@ -1,5 +1,5 @@
 const HANDLE_ERRORS = {
-  CastError: (res) => res.status(400).send({ error: "id used is malformed" }),
+  CastError: (res, { message }) => res.status(400).send({ error: message }),
 
   ValidationError: (res, { message }) =>
     res.status(400).send({ error: message }),
@@ -8,6 +8,8 @@ const HANDLE_ERRORS = {
 
   TokenExpiredError: (res, { message }) =>
     res.status(400).send({ error: message }),
+
+  SyntaxError: (res, { message }) => res.status(400).send({ error: message }),
 
   DefaultError: (res) => res.status(500).end(),
 }

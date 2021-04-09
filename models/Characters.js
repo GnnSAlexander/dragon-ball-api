@@ -5,7 +5,10 @@ const characterSchema = new Schema({
     type: String,
   },
   img: String,
-  planet: String,
+  planet: {
+    type: Schema.Types.ObjectId,
+    ref: "Planet",
+  },
   series: [
     {
       type: Schema.Types.ObjectId,

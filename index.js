@@ -2,6 +2,7 @@ require("dotenv").config()
 require("./mongodb")
 const express = require("express")
 const charactersRouter = require("./controllers/characters")
+const planetsRouter = require("./controllers/planets")
 const seriesRouter = require("./controllers/series")
 const handleErrors = require("./middleware/handleErrors")
 const unknownEndpoint = require("./middleware/notFound")
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/characters", charactersRouter)
 app.use("/api/series", seriesRouter)
+app.use("/api/planets", planetsRouter)
 
 app.use(handleErrors)
 app.use(unknownEndpoint)

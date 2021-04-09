@@ -1,13 +1,20 @@
+const charactersRouter = require("express").Router()
+
 const Character = require("../models/Characters")
 const Serie = require("../models/Series")
 
-const charactersRouter = require("express").Router()
+const _character = require("../utils/_character")
 
 charactersRouter.get("/", async (req, res) => {
-  const characters = await Character.find({}).populate("series", {
-    name: 1,
-    img: 1,
-  })
+  const characters = await Character.find({})
+    .populate("series", {
+      name: 1,
+      img: 1,
+    })
+    .populate("planet", {
+      name: 1,
+      img: 1,
+    })
   res.json(characters)
 })
 
@@ -26,6 +33,7 @@ charactersRouter.post("/", async (req, res, next) => {
     planet: body.planet,
     series: series.split(","),
     species: body.species,
+    date: new Date(),
   })
 
   try {
@@ -39,10 +47,15 @@ charactersRouter.post("/", async (req, res, next) => {
 charactersRouter.get("/:id", async (req, res) => {
   const { id } = req.params
 
-  const character = await Character.findById(id).populate("series", {
-    name: 1,
-    img: 1,
-  })
+  const character = await Character.findById(id)
+    .populate("series", {
+      name: 1,
+      img: 1,
+    })
+    .populate("planet", {
+      name: 1,
+      img: 1,
+    })
 
   if (!character) return res.status(400).end()
 
@@ -51,17 +64,8 @@ charactersRouter.get("/:id", async (req, res) => {
 
 charactersRouter.put("/:id", async (req, res, next) => {
   const { id } = req.params
-  const body = req.body
 
-  const series = body.series || []
-
-  const newCharacter = {
-    name: body.name,
-    img: body.img || "",
-    planet: body.planet,
-    series: series.split(","),
-    species: body.species,
-  }
+  const newCharacter = _character.generateCharacter(req)
 
   try {
     const characterUpdated = await Character.findByIdAndUpdate(
