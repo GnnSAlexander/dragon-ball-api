@@ -1,7 +1,12 @@
 const { model, Schema } = require("mongoose")
 
 const serieSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+    uniqueCaseInsensitive: true,
+  },
   img: String,
   date_added: Date,
   date_modified: Date,

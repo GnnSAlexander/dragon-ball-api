@@ -1,6 +1,8 @@
 const HANDLE_ERRORS = {
   CastError: (res, { message }) => res.status(400).send({ error: message }),
 
+  MongoError: (res, { message }) => res.status(400).send({ error: message }),
+
   ValidationError: (res, { message }) =>
     res.status(400).send({ error: message }),
 

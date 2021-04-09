@@ -3,6 +3,9 @@ const { model, Schema } = require("mongoose")
 const characterSchema = new Schema({
   name: {
     type: String,
+    required: true,
+    unique: true,
+    uniqueCaseInsensitive: true,
   },
   img: String,
   planet: {

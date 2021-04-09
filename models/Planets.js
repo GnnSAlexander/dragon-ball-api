@@ -1,11 +1,19 @@
 const { model, Schema } = require("mongoose")
+const uniqueValidator = require("mongoose-unique-validator")
 
 const planetSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+    uniqueCaseInsensitive: true,
+  },
   img: String,
   date_added: Date,
   date_modified: Date,
 })
+
+planetSchema.plugin(uniqueValidator)
 
 planetSchema.set("toJSON", {
   transform: (document, returnedObject) => {
